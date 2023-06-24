@@ -112,7 +112,6 @@ export const getIdToken = async () => {
   }
 }
 
-
 export const resetPassword = async (username: string, code: string, password: string) => {
   try {
     await Auth.forgotPasswordSubmit(username, code, password);

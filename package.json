@@ -1,5 +1,5 @@
 {
-  "name": "react-aws-cognito-auth",
+  "name": "react-aws-cognito-auth-hooks",
   "version": "2.0.3",
   "description": "AWS Cognito React Authentication",
   "repository": {
