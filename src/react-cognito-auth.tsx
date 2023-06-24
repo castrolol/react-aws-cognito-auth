@@ -78,6 +78,41 @@ export const logout = async () => {
   }
 };
 
+export const forgotPasword = async (email: string) => {
+  try {
+    await Auth.forgotPassword(email);
+  } catch (error) {
+    throw error;
+  }
+}
+
+export const currentSession = async () => {
+  try {
+    return await Auth.currentSession();
+  } catch (error) {
+    throw error;
+  }
+}
+
+export const sessionIsValid = async () => {
+  try {
+    const response = await currentSession()
+    return response?.isValid();
+  } catch (error) {
+    return false;
+  }
+}
+
+export const getIdToken = async () => {
+  try {
+    const response = await currentSession()
+    return response?.getIdToken();
+  } catch (error) {
+    return null;
+  }
+}
+
+
 export const resetPassword = async (username: string, code: string, password: string) => {
   try {
     await Auth.forgotPasswordSubmit(username, code, password);
